@@ -10,16 +10,19 @@ DateTime::Format::Duration::DurationString - JIRA style parsing of duration
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 =head1 SYNOPSIS
 
   package MyApp;
   use DateTime::Format::Duration::DurationString;
+  
+  my $seconds  = DateTime::Format::Duration::DurationString->new()->parse('1d 3h')->to_seconds;
+  my $duration = DateTime::Format::Duration::DurationString->new()->parse('1d 3h')->to_duration;
 
 
 =head1 DESCRIPTION
@@ -110,8 +113,11 @@ sub _parse_token {
         if ($typ eq 's') {
             $self->seconds($self->seconds + $num);
         }
-        elsif (($typ eq 'm')||($typ eq '')) {
+        elsif (($typ eq 'm')) {
             $self->minutes($self->minutes + $num);
+        } 
+        elsif (($typ eq 'h')||($typ eq '')) {
+            $self->hours($self->hours + $num);
         } 
         elsif ($typ eq 'd'){
             $self->days($self->days + $num);
@@ -131,6 +137,9 @@ sub _parse_token {
 
 1; # Return something nice to the caller
 
+=head1 TODO
+
+Parsestring in constructor?
 
 =head1 SEE ALSO
 
