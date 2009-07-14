@@ -3,7 +3,6 @@
 use Test::More tests => 7;
 
 use DateTime::Duration;
-use Data::Dump qw/dump/;
 
 BEGIN {
 	use_ok( 'DateTime::Format::Duration::DurationString' );
