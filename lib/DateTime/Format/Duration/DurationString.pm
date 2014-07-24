@@ -1,8 +1,9 @@
 package DateTime::Format::Duration::DurationString;
 
-use Any::Moose;
+use Moo;
 use Carp;
 use DateTime::Duration;
+use MooX::Types::MooseLike::Numeric 'PositiveOrZeroInt';
 
 =head1 NAME
 
@@ -41,13 +42,13 @@ use constant WEEK   => 7 * DAY;
 # use constant MONTH  => 31 * DAY;
 # use constant YEAR   => 365 * DAY;
 
-has 'seconds' => (is => 'rw', isa => 'Int', default => 0);
-has 'minutes' => (is => 'rw', isa => 'Int', default => 0);
-has 'hours'   => (is => 'rw', isa => 'Int', default => 0);
-has 'days'    => (is => 'rw', isa => 'Int', default => 0);
-has 'weeks'   => (is => 'rw', isa => 'Int', default => 0);
-# has 'months'  => (is => 'rw', isa => 'Int', default => 0);
-# has 'years'   => (is => 'rw', isa => 'Int', default => 0);
+has 'seconds' => (is => 'rw', isa => PositiveOrZeroInt, default => 0);
+has 'minutes' => (is => 'rw', isa => PositiveOrZeroInt, default => 0);
+has 'hours'   => (is => 'rw', isa => PositiveOrZeroInt, default => 0);
+has 'days'    => (is => 'rw', isa => PositiveOrZeroInt, default => 0);
+has 'weeks'   => (is => 'rw', isa => PositiveOrZeroInt, default => 0);
+# has 'months'  => (is => 'rw', isa => PositiveOrZeroInt, default => 0);
+# has 'years'   => (is => 'rw', isa => PositiveOrZeroInt, default => 0);
 
 =head2 to_seconds
 
