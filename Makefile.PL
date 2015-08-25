@@ -4,7 +4,8 @@ name          'DateTime-Format-Duration-DurationString';
 all_from      'lib/DateTime/Format/Duration/DurationString.pm';
 
 requires 'DateTime::Duration';
-requires 'Any::Moose';
+requires 'Moo';
+requires 'MooX::Types::MooseLike::Numeric';
 requires 'Carp';
 
 auto_install;
