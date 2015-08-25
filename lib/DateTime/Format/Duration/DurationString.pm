@@ -148,7 +148,7 @@ L<DateTime>, L<DateTime::Duration> and L<DateTime::Format::Duration>
 
 =head1 AUTHOR
 
-BjE<oslash>rn-Olav Strand E<lt>bo@startsiden.noE<gt>
+Bjorn-Olav Strand E<lt>bo@startsiden.noE<gt>
 
 =head1 LICENSE
 
